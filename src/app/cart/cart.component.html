@@ -1,3 +1,6 @@
-<p>
-cart works!
-</p>
+<h3>Cart</h3>
+<!--  use a <div> with an *ngFor to display each of the cart items with its name and price.  -->
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+</div>

@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+/* HttpClientModule registers the providers your app needs to use a single instance of the HttpClient service throughout your app.  */
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -14,6 +16,7 @@ import { CartComponent } from './cart/cart.component';
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
@@ -27,10 +30,11 @@ import { CartComponent } from './cart/cart.component';
     ProductListComponent,
     ProductAlertsComponent,
     ProductDetailsComponent,
-    CartComponent
+    CartComponent,
   ],
-  bootstrap: [ AppComponent ],
-  providers: [CartService]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
 
